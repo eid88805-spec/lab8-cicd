@@ -2,8 +2,9 @@
   "name": "lab8-cicd",
   "version": "1.0.0",
   "description": "Lab 8 CI/CD Assignment",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,8 @@
   },
   "homepage": "https://github.com/eid88805-spec/lab8-cicd#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "mongoose": "^7.6.0",
+    "dotenv": "^16.1.4"
   }
 }

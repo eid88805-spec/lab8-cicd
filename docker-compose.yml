@@ -7,21 +7,18 @@ services:
     ports:
       - "3000:3000"
     environment:
-      DATABASE_URL: postgresql://taskuser:taskpass@db:5432/taskdb
+      MONGO_URI: mongodb://mongo:27017/tasksdb
     depends_on:
-      - db
+      - mongo
     restart: unless-stopped
 
-  db:
-    image: postgres:16-alpine
-    environment:
-      POSTGRES_USER: taskuser
-      POSTGRES_PASSWORD: taskpass
-      POSTGRES_DB: taskdb
+  mongo:
+    image: mongo:6
+    ports:
+      - "27017:27017"
     volumes:
-      - ./init-db:/docker-entrypoint-initdb.d
-      - db-data:/var/lib/postgresql/data
+      - mongo-data:/data/db
     restart: unless-stopped
 
 volumes:
-  db-data:
+  mongo-data:
