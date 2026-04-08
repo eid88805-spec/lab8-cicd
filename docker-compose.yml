@@ -3,7 +3,7 @@ version: "3.8"
 services:
   app:
     build: .
-    image: eid88805/lab6-app:latest
+    image: eid88805/lab6-app:v1
     ports:
       - "3000:3000"
     environment:
