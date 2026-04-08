@@ -62,12 +62,11 @@ async function seed() {
     const count = await Task.countDocuments();
     if (count === 0) {
         const seedTasks = [
-            { id: 1, name: 'Grocery Shopping', status: 'pending' },
-            { id: 2, name: 'Clean the house', status: 'in-progress' },
-            { id: 3, name: 'Pay bills', status: 'completed' },
-            { id: 4, name: 'Walk the dog', status: 'pending' },
-            { id: 5, name: 'Read a book', status: 'in-progress' },
-            { id: 6, name: 'Exercise', status: 'pending' }
+            { id: 1, name: 'Milk', status: 'done' },
+            { id: 2, name: 'Eggs', status: 'done' },
+            { id: 3, name: 'Bread', status: 'pending' },
+            { id: 4, name: 'Butter', status: 'pending' },
+            { id: 5, name: 'Orange juice', status: 'pending' }
         ];
         await Task.insertMany(seedTasks);
         console.log('Seeded initial tasks');
